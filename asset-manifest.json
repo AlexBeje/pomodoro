@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://alexbeje.github.io/pomodoro/static/css/main.57df2af6.chunk.css",
-    "main.js": "https://alexbeje.github.io/pomodoro/static/js/main.c2fd2b5e.chunk.js",
-    "main.js.map": "https://alexbeje.github.io/pomodoro/static/js/main.c2fd2b5e.chunk.js.map",
+    "main.js": "https://alexbeje.github.io/pomodoro/static/js/main.db6ad4ee.chunk.js",
+    "main.js.map": "https://alexbeje.github.io/pomodoro/static/js/main.db6ad4ee.chunk.js.map",
     "runtime-main.js": "https://alexbeje.github.io/pomodoro/static/js/runtime-main.b83ae4d9.js",
     "runtime-main.js.map": "https://alexbeje.github.io/pomodoro/static/js/runtime-main.b83ae4d9.js.map",
     "static/js/2.e5b0c780.chunk.js": "https://alexbeje.github.io/pomodoro/static/js/2.e5b0c780.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b83ae4d9.js",
     "static/js/2.e5b0c780.chunk.js",
     "static/css/main.57df2af6.chunk.css",
-    "static/js/main.c2fd2b5e.chunk.js"
+    "static/js/main.db6ad4ee.chunk.js"
   ]
 }
