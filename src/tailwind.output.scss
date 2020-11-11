@@ -642,6 +642,18 @@ video {
   background-color: rgba(43, 108, 176, var(--bg-opacity));
 }
 
+.h-15-per {
+  height: 15%;
+}
+
+.h-25-per {
+  height: 25%;
+}
+
+.h-45-per {
+  height: 45%;
+}
+
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));
@@ -22806,6 +22818,26 @@ video {
 .animate-bounce {
   -webkit-animation: bounce 1s infinite;
           animation: bounce 1s infinite;
+}
+
+@media (min-width: 768px) {
+  .md-w-600 {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .md-h-600 {
+    height: 100%;
+    max-height: 600px;
+  }
+
+  .md-h-20-per {
+    height: 20%;
+  }
+
+  .md-h-60-per {
+    height: 60%;
+  }
 }
 
 body {

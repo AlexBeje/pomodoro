@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./App.scss";
+
+import Countdown from "./components/countdown/countdown.component";
 
 let seconds = 0;
 let minutes = 0;
@@ -69,39 +70,16 @@ function App() {
   };
 
   return (
-    <div className="app">
-      {/* <div>
-        <Countdown seconds={} minutes={} />
-      </div> */}
-      <div className="flex flex-col">
-        <div className="text-center flex items-center">
-          <button
-            className="btn btn-blue ml-auto"
-            onClick={subsctractTimeHandler}
-          >
-            -
-          </button>
-          <p className="m-5">
-            Timer: {dynamicMinutes} : {dynamicSeconds}
-          </p>
-          <button className="btn btn-blue mr-auto" onClick={addTimeHandler}>
-            +
-          </button>
-        </div>
-        <br />
-        <button
-          className="btn btn-blue m-auto mb-2"
-          onClick={startTimerHandler}
-        >
-          Start
-        </button>
-        <button className="btn btn-blue m-auto mb-2" onClick={stopTimerHandler}>
-          Stop
-        </button>
-        <button className="btn btn-blue m-auto" onClick={resetTimerHandler}>
-          Reset
-        </button>
-      </div>
+    <div className="flex h-screen">
+      <Countdown
+        seconds={dynamicSeconds}
+        minutes={dynamicMinutes}
+        addTime={addTimeHandler}
+        subsctractTime={subsctractTimeHandler}
+        startTimer={startTimerHandler}
+        stopTimer={stopTimerHandler}
+        resetTimer={resetTimerHandler}
+      />
     </div>
   );
 }

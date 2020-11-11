@@ -14,6 +14,32 @@
   .btn-blue:hover {
     @apply bg-blue-700;
   }
+  .h-15-per {
+    height: 15%;
+  }
+  .h-25-per {
+    height: 25%;
+  }
+  .h-45-per {
+    height: 45%;
+  }
+}
+
+@screen md {
+  .md-w-600 {
+    width: 100%;
+    max-width: 600px;
+  }
+  .md-h-600 {
+    height: 100%;
+    max-height: 600px;
+  }
+  .md-h-20-per {
+    height: 20%;
+  }
+  .md-h-60-per {
+    height: 60%;
+  }
 }
 
 body {
