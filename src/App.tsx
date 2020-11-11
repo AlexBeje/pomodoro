@@ -15,7 +15,7 @@ function App() {
   };
 
   const subsctractTimeHandler = () => {
-    if (seconds !== 0) {
+    if (minutes !== 0) {
       minutes = minutes - 5;
       setDynamicMinutes(minutes);
     }
