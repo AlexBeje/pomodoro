@@ -9,13 +9,13 @@ function App() {
   const [dynamicSeconds, setDynamicSeconds] = useState(0);
   const [dynamicMinutes, setDynamicMinutes] = useState(0);
 
-  const addTime = () => {
+  const addTimeHandler = () => {
     minutes = minutes + 5;
     setDynamicMinutes(minutes);
   };
 
-  const subsctractTime = () => {
-    if (dynamicSeconds !== 0) {
+  const subsctractTimeHandler = () => {
+    if (seconds !== 0) {
       minutes = minutes - 5;
       setDynamicMinutes(minutes);
     }
@@ -27,23 +27,25 @@ function App() {
       setDynamicSeconds(seconds);
       if (seconds === 0 && minutes !== 0) {
         seconds = 60;
-        if (minutes !== 0) {
-          minutes = minutes - 1;
-        }
-        setDynamicMinutes(minutes);
+        setTimeout(() => {
+          if (minutes !== 0) {
+            minutes = minutes - 1;
+          }
+          setDynamicMinutes(minutes);
+        }, 1000);
       }
-    }, 200);
+    }, 1000);
   };
 
-  const startTimer = () => {
+  const startTimerHandler = () => {
     if (minutes !== 0 || seconds !== 0) {
       if (minutes !== 0 && seconds === 0) {
         seconds = 60;
+        intervalHandler();
         setTimeout(() => {
           minutes = minutes - 1;
           setDynamicMinutes(minutes);
-        }, 200);
-        intervalHandler();
+        }, 1000);
       } else {
         intervalHandler();
       }
@@ -54,11 +56,11 @@ function App() {
     clearInterval(myInterval);
   }
 
-  const stopTimer = () => {
+  const stopTimerHandler = () => {
     clearInterval(myInterval);
   };
 
-  const resetTimer = () => {
+  const resetTimerHandler = () => {
     clearInterval(myInterval);
     seconds = 0;
     minutes = 0;
@@ -68,26 +70,35 @@ function App() {
 
   return (
     <div className="app">
+      {/* <div>
+        <Countdown seconds={} minutes={} />
+      </div> */}
       <div className="flex flex-col">
         <div className="text-center flex items-center">
-          <button className="btn btn-blue ml-auto" onClick={subsctractTime}>
+          <button
+            className="btn btn-blue ml-auto"
+            onClick={subsctractTimeHandler}
+          >
             -
           </button>
           <p className="m-5">
             Timer: {dynamicMinutes} : {dynamicSeconds}
           </p>
-          <button className="btn btn-blue mr-auto" onClick={addTime}>
+          <button className="btn btn-blue mr-auto" onClick={addTimeHandler}>
             +
           </button>
         </div>
         <br />
-        <button className="btn btn-blue m-auto mb-2" onClick={startTimer}>
+        <button
+          className="btn btn-blue m-auto mb-2"
+          onClick={startTimerHandler}
+        >
           Start
         </button>
-        <button className="btn btn-blue m-auto mb-2" onClick={stopTimer}>
+        <button className="btn btn-blue m-auto mb-2" onClick={stopTimerHandler}>
           Stop
         </button>
-        <button className="btn btn-blue m-auto" onClick={resetTimer}>
+        <button className="btn btn-blue m-auto" onClick={resetTimerHandler}>
           Reset
         </button>
       </div>
