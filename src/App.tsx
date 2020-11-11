@@ -2,31 +2,57 @@ import React, { useState } from "react";
 import "./App.scss";
 
 let seconds = 0;
+let minutes = 0;
 let myInterval: number;
 
 function App() {
-  const [dynamicSeconds, setTimer] = useState(0);
+  const [dynamicSeconds, setDynamicSeconds] = useState(0);
+  const [dynamicMinutes, setDynamicMinutes] = useState(0);
 
   const addTime = () => {
-    seconds = seconds + 5;
-    setTimer(seconds);
+    minutes = minutes + 5;
+    setDynamicMinutes(minutes);
   };
 
   const subsctractTime = () => {
     if (dynamicSeconds !== 0) {
-      seconds = seconds - 5;
-      setTimer(seconds);
+      minutes = minutes - 5;
+      setDynamicMinutes(minutes);
     }
   };
 
+  const intervalHandler = () => {
+    myInterval = window.setInterval(() => {
+      seconds = seconds - 1;
+      setDynamicSeconds(seconds);
+      if (seconds === 0 && minutes !== 0) {
+        seconds = 60;
+        if (minutes !== 0) {
+          minutes = minutes - 1;
+        }
+        setDynamicMinutes(minutes);
+      }
+    }, 200);
+  };
+
   const startTimer = () => {
-    if (dynamicSeconds !== 0) {
-      myInterval = window.setInterval(() => {
-        seconds = seconds - 1;
-        setTimer(seconds);
-      }, 1000);
+    if (minutes !== 0 || seconds !== 0) {
+      if (minutes !== 0 && seconds === 0) {
+        seconds = 60;
+        setTimeout(() => {
+          minutes = minutes - 1;
+          setDynamicMinutes(minutes);
+        }, 200);
+        intervalHandler();
+      } else {
+        intervalHandler();
+      }
     }
   };
+
+  if (seconds === 0 && minutes === 0) {
+    clearInterval(myInterval);
+  }
 
   const stopTimer = () => {
     clearInterval(myInterval);
@@ -35,7 +61,9 @@ function App() {
   const resetTimer = () => {
     clearInterval(myInterval);
     seconds = 0;
-    setTimer(seconds);
+    minutes = 0;
+    setDynamicSeconds(seconds);
+    setDynamicMinutes(minutes);
   };
 
   return (
@@ -45,7 +73,9 @@ function App() {
           <button className="btn btn-blue ml-auto" onClick={subsctractTime}>
             -
           </button>
-          <p className="m-5">Timer: 0 : {dynamicSeconds}</p>
+          <p className="m-5">
+            Timer: {dynamicMinutes} : {dynamicSeconds}
+          </p>
           <button className="btn btn-blue mr-auto" onClick={addTime}>
             +
           </button>
