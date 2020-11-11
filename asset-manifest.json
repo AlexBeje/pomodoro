@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "https://alexbeje.github.io/pomodoro/static/css/main.57df2af6.chunk.css",
-    "main.js": "https://alexbeje.github.io/pomodoro/static/js/main.db6ad4ee.chunk.js",
-    "main.js.map": "https://alexbeje.github.io/pomodoro/static/js/main.db6ad4ee.chunk.js.map",
+    "main.js": "https://alexbeje.github.io/pomodoro/static/js/main.404d961d.chunk.js",
+    "main.js.map": "https://alexbeje.github.io/pomodoro/static/js/main.404d961d.chunk.js.map",
     "runtime-main.js": "https://alexbeje.github.io/pomodoro/static/js/runtime-main.b83ae4d9.js",
     "runtime-main.js.map": "https://alexbeje.github.io/pomodoro/static/js/runtime-main.b83ae4d9.js.map",
-    "static/js/2.e5b0c780.chunk.js": "https://alexbeje.github.io/pomodoro/static/js/2.e5b0c780.chunk.js",
-    "static/js/2.e5b0c780.chunk.js.map": "https://alexbeje.github.io/pomodoro/static/js/2.e5b0c780.chunk.js.map",
+    "static/js/2.539ee11a.chunk.js": "https://alexbeje.github.io/pomodoro/static/js/2.539ee11a.chunk.js",
+    "static/js/2.539ee11a.chunk.js.map": "https://alexbeje.github.io/pomodoro/static/js/2.539ee11a.chunk.js.map",
     "static/js/3.2838c4e1.chunk.js": "https://alexbeje.github.io/pomodoro/static/js/3.2838c4e1.chunk.js",
     "static/js/3.2838c4e1.chunk.js.map": "https://alexbeje.github.io/pomodoro/static/js/3.2838c4e1.chunk.js.map",
     "index.html": "https://alexbeje.github.io/pomodoro/index.html",
     "static/css/main.57df2af6.chunk.css.map": "https://alexbeje.github.io/pomodoro/static/css/main.57df2af6.chunk.css.map",
-    "static/js/2.e5b0c780.chunk.js.LICENSE.txt": "https://alexbeje.github.io/pomodoro/static/js/2.e5b0c780.chunk.js.LICENSE.txt"
+    "static/js/2.539ee11a.chunk.js.LICENSE.txt": "https://alexbeje.github.io/pomodoro/static/js/2.539ee11a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b83ae4d9.js",
-    "static/js/2.e5b0c780.chunk.js",
+    "static/js/2.539ee11a.chunk.js",
     "static/css/main.57df2af6.chunk.css",
-    "static/js/main.db6ad4ee.chunk.js"
+    "static/js/main.404d961d.chunk.js"
   ]
 }
