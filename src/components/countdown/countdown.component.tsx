@@ -25,7 +25,7 @@ function countdown({
 }: CountdownProps): ReactElement {
   return (
     <div className="flex flex-col h-screen w-full md:m-auto md-h-600 md-w-600">
-      <p className="text-center text-megrim text-unselectable m-auto hidden md:block md:text-5xl md:mb-4 ">
+      <p className="text-center text-megrim text-unselectable m-auto hidden md:block md:text-5xl md:mb-4">
         POMODORO APP
       </p>
       <div className="flex bg-secondary text-primary md:hidden h-15-per land-h-30-per border-solid border-b-2">
