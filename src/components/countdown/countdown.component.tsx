@@ -75,7 +75,7 @@ function countdown({
       </div>
       <div className="justify-between mt-2 items-center hidden md:flex">
         <div className="flex items-center">
-          <a href="https://alexbeje.github.io/pomodoro/">
+          <a href="https://github.com/AlexBeje/pomodoro">
             <AiFillGithub className="mr-5 text-adjcent-hover" />
           </a>
           <a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FiBZQyAA5v9EZBGiQk7zhRI%2Fpomodoro%3Fnode-id%3D0%253A1">
