@@ -9,6 +9,7 @@ let myInterval: number;
 function App() {
   const [dynamicSeconds, setDynamicSeconds] = useState(0);
   const [dynamicMinutes, setDynamicMinutes] = useState(0);
+  const [startPressed, setStartPressed] = useState(false);
 
   const addTimeHandler = () => {
     minutes = minutes + 5;
@@ -39,7 +40,8 @@ function App() {
   };
 
   const startTimerHandler = () => {
-    if (minutes !== 0 || seconds !== 0) {
+    if ((minutes !== 0 && !startPressed) || (seconds !== 0 && !startPressed)) {
+      setStartPressed(!startPressed);
       if (minutes !== 0 && seconds === 0) {
         seconds = 60;
         intervalHandler();
@@ -58,10 +60,12 @@ function App() {
   }
 
   const stopTimerHandler = () => {
+    setStartPressed(!startPressed);
     clearInterval(myInterval);
   };
 
   const resetTimerHandler = () => {
+    setStartPressed(!startPressed);
     clearInterval(myInterval);
     seconds = 0;
     minutes = 0;
