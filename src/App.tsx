@@ -17,7 +17,7 @@ function App() {
   };
 
   const subsctractTimeHandler = () => {
-    if (minutes !== 0) {
+    if (minutes !== 0 && minutes >= 5) {
       minutes = minutes - 5;
       setDynamicMinutes(minutes);
     }
@@ -60,12 +60,12 @@ function App() {
   }
 
   const stopTimerHandler = () => {
-    setStartPressed(!startPressed);
+    setStartPressed(false);
     clearInterval(myInterval);
   };
 
   const resetTimerHandler = () => {
-    setStartPressed(!startPressed);
+    setStartPressed(false);
     clearInterval(myInterval);
     seconds = 0;
     minutes = 0;
@@ -81,6 +81,7 @@ function App() {
         addTime={addTimeHandler}
         subsctractTime={subsctractTimeHandler}
         startTimer={startTimerHandler}
+        startPressed={startPressed}
         stopTimer={stopTimerHandler}
         resetTimer={resetTimerHandler}
       />
