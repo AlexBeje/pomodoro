@@ -7,7 +7,7 @@ import { FiFigma } from "react-icons/fi";
 type CountdownProps = {
   seconds: number;
   minutes: number;
-  timerStarted: boolean;
+  startPressed: boolean;
   addTime: () => void;
   subsctractTime: () => void;
   startTimer: () => void;
@@ -20,9 +20,9 @@ function countdown({
   minutes,
   addTime,
   subsctractTime,
+  startPressed,
   startTimer,
   stopTimer,
-  timerStarted,
   resetTimer,
 }: CountdownProps): ReactElement {
   return (
@@ -39,7 +39,7 @@ function countdown({
         <button
           className="bg-secondary-hover text-center text-audiowide text-3xl md:text-5xl m-auto w-1/3 h-full"
           onClick={subsctractTime}
-          disabled={timerStarted}
+          disabled={startPressed}
         >
           -
         </button>
@@ -52,7 +52,7 @@ function countdown({
         <button
           className="bg-secondary-hover text-audiowide text-3xl md:text-5xl text-center m-auto w-1/3 h-full"
           onClick={addTime}
-          disabled={timerStarted}
+          disabled={startPressed}
         >
           +
         </button>

@@ -10,7 +10,6 @@ function App() {
   const [dynamicSeconds, setDynamicSeconds] = useState(0);
   const [dynamicMinutes, setDynamicMinutes] = useState(0);
   const [startPressed, setStartPressed] = useState(false);
-  const [timerStarted, setTimerStarted] = useState(false);
 
   const addTimeHandler = () => {
     minutes = minutes + 5;
@@ -18,7 +17,7 @@ function App() {
   };
 
   const subsctractTimeHandler = () => {
-    if (minutes !== 0 && minutes > 5) {
+    if (minutes !== 0 && minutes >= 5) {
       minutes = minutes - 5;
       setDynamicMinutes(minutes);
     }
@@ -43,7 +42,6 @@ function App() {
   const startTimerHandler = () => {
     if ((minutes !== 0 && !startPressed) || (seconds !== 0 && !startPressed)) {
       setStartPressed(!startPressed);
-      setTimerStarted(!timerStarted);
       if (minutes !== 0 && seconds === 0) {
         seconds = 60;
         intervalHandler();
@@ -62,14 +60,13 @@ function App() {
   }
 
   const stopTimerHandler = () => {
-    setStartPressed(!startPressed);
-    setTimerStarted(!timerStarted);
+    setStartPressed(false);
     clearInterval(myInterval);
   };
 
   const resetTimerHandler = () => {
-    setStartPressed(!startPressed);
-    setTimerStarted(!timerStarted);
+    console.log(startPressed)
+    setStartPressed(false);
     clearInterval(myInterval);
     seconds = 0;
     minutes = 0;
@@ -85,7 +82,7 @@ function App() {
         addTime={addTimeHandler}
         subsctractTime={subsctractTimeHandler}
         startTimer={startTimerHandler}
-        timerStarted={timerStarted}
+        startPressed={startPressed}
         stopTimer={stopTimerHandler}
         resetTimer={resetTimerHandler}
       />
