@@ -65,7 +65,6 @@ function App() {
   };
 
   const resetTimerHandler = () => {
-    console.log(startPressed)
     setStartPressed(false);
     clearInterval(myInterval);
     seconds = 0;
